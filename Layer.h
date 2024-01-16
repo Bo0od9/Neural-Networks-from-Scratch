@@ -20,7 +20,8 @@ class Layer {
   [[nodiscard]] const Matrix &getWeights() const { return weights_; }
   [[nodiscard]] const Vector &getBiases() const { return biases_; }
   [[nodiscard]] const Vector &getOutput() const { return output_; }
-  void setInput(const Vector &input);
+
+  //These temporary methods are intended for debugging purposes only
   void setWeight(const Matrix &input);
   void setBiases(const Vector &input);
 
@@ -31,12 +32,10 @@ class Layer {
  private:
   Size inputSize_;
   Size outputSize_;
-
-  Vector input_;
-  Vector output_;
-
   Matrix weights_;
   Vector biases_;
+  Vector input_;
+  Vector output_;
   Matrix dLoss_dWeights_;
   Vector dLoss_dBiases;
 
