@@ -4,6 +4,7 @@
 #include "ActivationFunction.h"
 #include <cmath>
 
+//This will be reworked later using erasure types
 namespace Network {
 class SigmoidActivation : public ActivationFunction {
   [[nodiscard]] double compute(double x) const override {
