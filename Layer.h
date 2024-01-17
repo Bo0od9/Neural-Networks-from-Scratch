@@ -9,7 +9,7 @@ namespace Network {
 using Matrix = Eigen::MatrixXd;
 using Vector = Eigen::VectorXd;
 using Size = size_t;
-using ActivationFunctionPtr = std::unique_ptr<ActivationFunction>;
+using ActivationFunctionPtr = std::shared_ptr<ActivationFunction>;
 
 class Layer {
 
