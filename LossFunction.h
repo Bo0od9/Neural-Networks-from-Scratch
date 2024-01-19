@@ -10,8 +10,8 @@ using Vector = Eigen::VectorXd;
 class LossFunction {
  public:
   virtual ~LossFunction() = default;
-  virtual double computeLoss(const Vector &predicted, const Vector &actual) const = 0;
-  virtual Vector computeDerivativeLoss(const Vector &predicted, const Vector &actual) const = 0;
+  inline virtual double computeLoss(const Vector &predicted, const Vector &actual) const = 0;
+  inline virtual Vector computeDerivativeLoss(const Vector &predicted, const Vector &actual) const = 0;
 };
 }// namespace Network
 
