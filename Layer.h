@@ -20,7 +20,7 @@ class Layer {
   [[nodiscard]] const Matrix &getWeights() const { return weights_; }
   [[nodiscard]] const Vector &getBiases() const { return biases_; }
   [[nodiscard]] const Vector &getOutput() const { return output_; }
-  void setWeight(const Matrix &input);
+  void setWeights(const Matrix &input);
   void setBiases(const Vector &input);
 
   Vector forward(const Vector &input);

@@ -28,7 +28,7 @@ void Layer::updateWeights(double learningRate) {
   weights_ -= dLoss_dWeights_ * learningRate;
   biases_ -= dLoss_dBiases_ * learningRate;
 }
-void Layer::setWeight(const Network::Matrix &input) {
+void Layer::setWeights(const Network::Matrix &input) {
   assert(input.innerSize() == outputSize_ && input.outerSize() == inputSize_);
   weights_ = input;
 }
