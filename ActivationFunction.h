@@ -7,8 +7,8 @@ class ActivationFunction {
 
  public:
   virtual ~ActivationFunction() = default;
-  virtual double compute(double x) const = 0;
-  virtual double computeDerivative(double x) const = 0;
+  inline virtual double compute(double x) const = 0;
+  inline virtual double computeDerivative(double x) const = 0;
 };
 }// namespace Network
 #endif//ACTIVATIONFUNCTION_H_
