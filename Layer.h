@@ -24,7 +24,7 @@ class Layer {
   ActivationFunction &activationFunction_;
   const Index inputSize_;
   const Index outputSize_;
-  Matrix grad_biases_;
+  Vector grad_biases_;
   Matrix grad_weights_;
   Matrix weights_;
   Vector biases_;
