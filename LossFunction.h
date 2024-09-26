@@ -1,18 +1,18 @@
 #ifndef LOSSFUNCTION_H_
 #define LOSSFUNCTION_H_
-#include "Eigen/Dense"
-#include <cmath>
-#include <vector>
+
+#include "declarations.h"
 
 namespace Network {
-using Vector = Eigen::VectorXd;
 
 class LossFunction {
  public:
   virtual ~LossFunction() = default;
-  inline virtual double computeLoss(const Vector &predicted, const Vector &actual) const = 0;
-  inline virtual Vector computeDerivativeLoss(const Vector &predicted, const Vector &actual) const = 0;
+  virtual double computeLoss(const Vector &predicted, const Vector &actual) const = 0;
+  virtual Vector computeDerivativeLoss(const Vector &predicted, const Vector &actual) const = 0;
+  virtual double computeBatchLoss(const Matrix &predictedBatch, const Matrix &actualBatch) const = 0;
+  virtual Matrix computeBatchDerivativeLoss(const Matrix &predictedBatch, const Matrix &actualBatch) const = 0;
 };
-}// namespace Network
 
+}// namespace Network
 #endif//LOSSFUNCTION_H_

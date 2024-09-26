@@ -1,12 +1,12 @@
-#ifndef MEANSQUAREDERROR_H_
-#define MEANSQUAREDERROR_H_
+#ifndef CROSSENTROPYLOSS_H_
+#define CROSSENTROPYLOSS_H_
 
 #include "LossFunction.h"
 #include "declarations.h"
 
 namespace Network {
 
-class MeanSquaredError : public LossFunction {
+class CrossEntropyLoss : public LossFunction {
  public:
   double computeLoss(const Vector &predicted, const Vector &actual) const override;
   Vector computeDerivativeLoss(const Vector &predicted, const Vector &actual) const override;
@@ -15,4 +15,4 @@ class MeanSquaredError : public LossFunction {
 };
 
 }// namespace Network
-#endif//MEANSQUAREDERROR_H_
+#endif// CROSSENTROPYLOSS_H_
