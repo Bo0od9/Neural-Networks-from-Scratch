@@ -1,14 +1,15 @@
 #ifndef ACTIVATIONFUNCTION_H_
 #define ACTIVATIONFUNCTION_H_
-#include <cmath>
+#include "declarations.h"
 
 namespace Network {
-class ActivationFunction {
 
+class ActivationFunction {
  public:
   virtual ~ActivationFunction() = default;
-  inline virtual double compute(double x) const = 0;
-  inline virtual double computeDerivative(double x) const = 0;
+  virtual Matrix compute(const Matrix &matrix) const = 0;
+  virtual Matrix computeDerivative(const Matrix &matrix) const = 0;
 };
+
 }// namespace Network
 #endif//ACTIVATIONFUNCTION_H_

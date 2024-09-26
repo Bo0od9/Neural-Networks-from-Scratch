@@ -1,17 +1,22 @@
 #ifndef SIGMOIDACTIVATION_H_
 #define SIGMOIDACTIVATION_H_
+
 #include "ActivationFunction.h"
+#include "declarations.h"
 
 namespace Network {
+
 class SigmoidActivation : public ActivationFunction {
-  inline double compute(double x) const override {
-    return 1.0 / (1.0 + std::exp(-x));
+ public:
+  Matrix compute(const Matrix &matrix) const override {
+    return (1.0 + (-matrix.array()).exp()).inverse();
   }
-  inline double computeDerivative(double x) const override {
-    double sigmoid = compute(x);
-    return sigmoid * (1 - sigmoid);
+
+  Matrix computeDerivative(const Matrix &matrix) const override {
+    Matrix sigmoidMatrix = compute(matrix);
+    return sigmoidMatrix.array() * (1 - sigmoidMatrix.array());
   }
 };
-}// namespace Network
 
+}// namespace Network
 #endif//SIGMOIDACTIVATION_H_
