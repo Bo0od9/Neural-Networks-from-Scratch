@@ -34,4 +34,3 @@
 src/.idea
 src/cmake-build-debug
 tests/cmake-build-debug
-tests/googletest
